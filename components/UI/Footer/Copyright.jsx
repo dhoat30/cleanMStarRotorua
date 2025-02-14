@@ -10,27 +10,14 @@ export default function Copyright() {
     <PaperStyle>
       <Container maxWidth="xl" className="content-wrapper">
         <div className="copyright-wrapper">
-          <Typography variant="body1" component="span">
-            © {new Date().getFullYear()} Clean M Star. All rights reserved
-          </Typography>
+          
           <a href="https://webduel.co.nz" rel="nofollow" target="_blank">
-            <Typography variant="body1" component="span">
+            <Typography variant="body1" component="span" className="center-align">
               Designed & Developed by web<strong>duel</strong>
             </Typography>
           </a>
         </div>
-        {/* <div className="policy-links">
-          <Link href="/privacy-policy">
-            <Typography variant="body1" component="span">
-              Privacy Policy
-            </Typography>
-          </Link>
-          <Link href="/terms-and-conditions">
-            <Typography variant="body1" component="span">
-              Terms and Conditions
-            </Typography>
-          </Link>
-        </div> */}
+    
       </Container>
     </PaperStyle>
   );
@@ -48,6 +35,8 @@ const PaperStyle = styled.div`
       gap: 8px;
     }
     span {
+      display: block;
+      width: 100%;
       color: var(--dark-on-surface);
       font-weight: 300;
       text-align: center;
@@ -60,13 +49,7 @@ const PaperStyle = styled.div`
           text-decoration: underline;
           color: white;
         }
-        @media (min-width: 620px) {
-          &::before {
-            content: "|";
-            margin: 0 8px;
-            color: var(--dark-on-surface);
-          }
-        }
+       
       }
     }
     .policy-links {

@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import StarIcon from "@mui/icons-material/Star";
 import GoogleIcon from "../../Icons/GoogleIcon";
 
-export default function GoogleReviewCard({ name, description, customerPic, className }) {
+export default function GoogleReviewCard({ name, description, customerPic, className, showFacebookLogo }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const numberOfStars = 5;
   const starsJSX = Array.from({ length: numberOfStars }, (_, index) => (
@@ -22,7 +22,7 @@ export default function GoogleReviewCard({ name, description, customerPic, class
     description.length > charLimit
       ? description.slice(0, charLimit) + "..."
       : description;
-
+let sourceLogo = showFacebookLogo ? <Image src="/facebook-reviews.png" alt="facebook page" width={128/1.5} height={32/1.5}/> :   <GoogleIcon />;
   return (
     <Div className={className}>
       <div className="profile-wrapper">
@@ -49,21 +49,24 @@ export default function GoogleReviewCard({ name, description, customerPic, class
           </button>
         )}
       </div>
-      <GoogleIcon />
+        {sourceLogo}
     </Div>
   );
 }
 
 const Div = styled.div`
-  background: var(--light-surface-container-high);
+  background: var(--light-surface-container-low);
   padding: 16px;
   border: 1px solid var(--light-outline-variant);
-  max-width: calc(100% - 16px);
+  max-width: calc(100%);
   .profile-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
+    img{
+      border-radius: 50%;
+    }
   }
 
   .description-wrapper {

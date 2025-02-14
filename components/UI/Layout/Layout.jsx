@@ -9,7 +9,11 @@ import ServiceTabs from "./Sections/ServiceTabs";
 import Packages from "./Sections/Packages";
 import FaqAccordionSection from "./Sections/FaqAccordionSection";
 import ServiceChecklist from "./Sections/ServiceChecklist";
+import FormSection from "./Sections/FormSection";
+import TestimonialSection from "./Sections/TestimonialSection";
+import OurWorkSection from "./Sections/OurWorkSection";
 export default function Layout({ sections, projectsData }) {
+  console.log(sections)
   if (!sections) return null;
   const sectionsJSX = sections.map((section, index) => {
     if (section.acf_fc_layout === "zigzag_cards") {
@@ -123,6 +127,26 @@ export default function Layout({ sections, projectsData }) {
         />
       );
     }
+    if (section.acf_fc_layout === "form_section") {
+      return (
+        <FormSection 
+        key={index}
+        title={section.title}
+        description={section.description} 
+        usp={section}
+        graphic={section.graphic}
+        />
+      )
+    }
+    if (section.acf_fc_layout === "testimonials") {
+        if(section.testimonials_source === 'facebook'){ 
+            return <TestimonialSection key={index} dataArr={section.facebook_reviews} title={section.title} description={section.description} /> 
+        }
+    }
+    if (section.acf_fc_layout === "our_work") {
+        console.log(section)
+        return <OurWorkSection key={index} title={section.title} description={section.description} beforeAfterGalleryArr={section.before_after_gallery}/> 
+  }
   });
 
   return <div>{sectionsJSX} </div>;

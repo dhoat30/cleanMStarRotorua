@@ -61,6 +61,7 @@ console.log(data)
             <GetQuoteForm
               className="row-max form-component"
               title={data.acf.hero_section.title}
+              hideTitle={true}
             />
           </div>
         </Container>
@@ -95,9 +96,14 @@ const Section = styled.section`
       background: var(--light-surface-container-lowest);
       //remove the top border radius
       border-radius: 12px;
+      padding: 8px 16px;
+
       @media (min-width: 1000px) {
         position: sticky;
         top: 80px;
+        padding: 8px 24px;
+
+
       }
     }
  

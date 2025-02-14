@@ -19,7 +19,7 @@ const work_sans = Work_Sans({
 
 
 export default function RootLayout({ children }) {
-  const GTM_ID = 'GTM-5KPWVXFL'
+  const GTM_ID = 'GTM-5PPN485Z'
 
   return (
     <html lang="en" className={`${work_sans.variable}`}>

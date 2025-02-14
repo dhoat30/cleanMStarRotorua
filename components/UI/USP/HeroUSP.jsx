@@ -4,10 +4,10 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-export default function HeroUSP({ data }) {
+export default function HeroUSP({ data, className }) {
   if (!data) return;
   return (
-    <Div className="hero-usp-wrapper">
+    <Div className={className}>
       <div className="text-usp-wrapper mt-16">
         {data.text_usp.map((item, index) => {
           return (

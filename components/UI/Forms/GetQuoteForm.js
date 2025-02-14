@@ -17,7 +17,7 @@ import { useRouter } from 'next/navigation';
 import Typography from "@mui/material/Typography";
 import GoogleMapsLoader from "@/components/GoogleMaps/GoogleMapsLoader";
 import GoogleAutocomplete from "@/components/GoogleMaps/GoogleAutoComplete";
-export default function GetQuoteForm({ className, formName = "Get a Quote Form", title = "Please fill out a form" }) {
+export default function GetQuoteForm({ className, formName = "Get a Quote Form", title = "Please fill out a form", hideTitle=false }) {
     const router = useRouter();
 
     const [formData, setFormData] = useState({
@@ -262,10 +262,13 @@ export default function GetQuoteForm({ className, formName = "Get a Quote Form",
             <ContainerStyled variant="div" className={`${className} py-8`} maxWidth="xl">
                 <Box sx={{ width: '100%' }}>
                     <React.Fragment>
-                        <div className="input-wrapper p-6">
-                            <Typography variant="h4" component="h1" className="title">
-                                {title}
-                            </Typography>
+                        <div className="input-wrapper">
+                          {!hideTitle && 
+                             <Typography variant="h4" component="h1" className="title">
+                             {title}
+                         </Typography>
+                          }
+                         
                             {formInputs}
                             <LoadingBtn newSubmission={newSubmission} onClick={submitHandler} isLoading={isLoading} isSuccess={isSuccess}>
                                 Submit now
@@ -315,14 +318,11 @@ const ContainerStyled = styled(Container)`
   }
 
   .input-wrapper{ 
-    padding: 24px 24px 24px 24px; 
     background: var(--light--surface-container);
     border-radius: 12px; 
-    @media (max-width: 600px) {
-      padding: 24px 16px;
-    }
+   
     .title { 
-      font-weight: 600;
+      margin: 8px 0; 
     }
     .Mui-error{ 
       font-size: 1rem;

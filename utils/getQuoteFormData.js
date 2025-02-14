@@ -1,24 +1,20 @@
 export const servicePropertyMap = {
     Residential: [
         { value: "Carpet Cleaning", label: "Carpet Cleaning", price: 0 },
-        { value: "Deep Cleaning", label: "Deep Cleaning", price: 0 },
-        { value: "End-of-Tenancy", label: "End-of-Tenancy", price: 0 },
+        { value: "End-of-Tenancy Cleaning", label: "End-of-Tenancy Cleaning", price: 0 },
         { value: "Apartment Cleaning", label: "Apartment Cleaning", price: 0 },
         { value: "Window Cleaning", label: "Window Cleaning", price: 400 },
         { value: "House Cleaning", label: "House Cleaning", price: 0 },
-        { value: "Oven Cleaning", label: "Oven Cleaning", price: 0 },
-        { value: "Spring Cleaning", label: "Spring Cleaning", price: 0 },
-        { value: "Upholstery Cleaning", label: "Upholstery Cleaning", price: 0 },
-        { value: "Vinyl Floor Stripping and Polishing", label: "Vinyl Floor Stripping and Polishing" },
+        { value: "Oven Cleaning", label: "Oven Cleaning", price: 150 },
+        { value: "Spring Cleaning", label: "Spring Cleaning", price: 750 },
+        { value: "Deep Cleaning", label: "Deep Cleaning", price: 400 },
+        { value: "Regular Cleaning", label: "Regular Cleaning", price: 400 },
 
     ],
     Commercial: [
         { value: "Office Cleaning", label: "Office Cleaning" },
-        { value: "Vinyl Floor Stripping and Polishing", label: "Vinyl Floor Stripping and Polishing" },
-        { value: "Commercials Cleaning", label: "Commercials Cleaning", price: 0 },
-        { value: "Carpet Cleaning", label: "Carpet Cleaning", price: 0 },
-        { value: "Upholstery Cleaning", label: "Upholstery Cleaning", price: 0 },
-        { value: "Window Cleaning", label: "Window Cleaning", price: 0 },
+              { value: "Carpet Cleaning", label: "Carpet Cleaning", price: 0 },
+        { value: "Window Cleaning", label: "Window Cleaning", price: 400 },
         // Add more commercial services as needed
     ],
 };

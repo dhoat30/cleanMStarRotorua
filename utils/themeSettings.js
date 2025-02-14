@@ -5,13 +5,13 @@ export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#232e85",
+      main: "#2C71A7",
     },
     secondary: {
-      main: "#232e85",
+      main: "#2C71A7",
     },
     tertiary: {
-      main: "#232e85",
+      main: "#2C71A7",
     },
     contrastThreshold: 4.5,
   },

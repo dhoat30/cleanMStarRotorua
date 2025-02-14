@@ -1,20 +1,27 @@
 export const uspData = { text_usp: [
-
     {
-        value: "Carpet Cleaning - $49/room"
+        value: "Carpet Cleaning"
     },
     {
-        value: "Oven Cleaning - $125"
+        value: "End of Tenancy Cleaning"
     },
+ 
     {
-        value: "End of Tenancy Cleaning - Starting from $450"
-    },
-    {
-        value: "Window Cleaning - $99 for 2 Bedroom House"
+    value: "Deep Cleaning"
     }, 
     {
-        value: "Deep Cleaning - Starting from $560"
+        value: "Regular Cleaning"
     },
+    {
+        value: "Oven Cleaning"
+    },
+    {
+        value: "Window Cleaning"
+    }, 
+
+    {
+        value: "Bathroom Cleaning"
+    }, 
     {
         value: "100% Satisfaction"
     },

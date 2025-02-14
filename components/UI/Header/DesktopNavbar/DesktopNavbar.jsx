@@ -128,9 +128,9 @@ function DesktopNavbar() {
             <Link href="/">
               <Image
                 src="/logo.png"
-                width={256 /4}
-                height={256/4}
-                alt="Epic Cleaning Logo"
+                width={170/3 }
+                height={159/3}
+                alt="Logo"
                 style={{ cursor: "pointer" }}
               />
             </Link>

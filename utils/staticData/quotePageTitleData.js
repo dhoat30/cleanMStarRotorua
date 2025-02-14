@@ -2,8 +2,8 @@
 export const quotePageTitleData = {acf: { 
     hero_section: { 
         title: "Request a Free, No-Obligation Quote Today", 
-        subtitle: "Tailored Cleaning, Just for You",
-        description: "Enjoy a pristine home or office without the hassle. Request a free, no-obligation quote today—our friendly, experienced team crafts every service to fit your unique needs, ensuring a sparkling clean space every time.", 
+        subtitle: "Customised Cleaning Solutions at Your Fingertips",
+        description: "Ready for a spotless home or office? Request a free, no-obligation quote. Our friendly and experienced team tailors services to your specific needs, ensuring a sparkling clean space every time. Fill out our quick form and let us handle the dirt, so you can focus on what truly matters. ", 
         image: { 
             sizes: { 
                 large:  "/quote-page.jpg"
@@ -15,14 +15,14 @@ export const quotePageTitleData = {acf: {
         beforeImage: { 
             url:"/before-image.jpg", 
             alt: "Before Carpet Cleaning",
-            height: 583, 
-            width: 626
+            height: 960, 
+            width: 720
         }, 
         afterImage:{ 
             url:"/after-image.jpg", 
             alt: "After Carpet Cleaning",
-            height: 583, 
-            width: 626
+            height: 960, 
+            width: 720
         }
     }
 }}

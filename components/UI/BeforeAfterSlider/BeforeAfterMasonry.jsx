@@ -5,7 +5,7 @@ import React from "react";
 import { ReactCompareSlider } from "react-compare-slider";
 
 export default function BeforeAfterMasonry({ data, showTitle, priority }) {
-  if (!data.afterImage || !data.beforeImage) return null;
+  if (!data.beforeImage) return null;
   return (
     <Container>
       {showTitle && (
@@ -13,40 +13,48 @@ export default function BeforeAfterMasonry({ data, showTitle, priority }) {
           Before & After
         </Typography>
       )}
+      { data.afterImage ? 
+            <ReactCompareSlider
+            className="image-wrapper"
+            onlyHandleDraggable={true}
+            style={{
+              paddingBottom: `${
+                (data.beforeImage.height / data.beforeImage.width) * 100
+              }%`,
+              touchAction: "pan-y",
+            }}
+            itemTwo={
+              <Image
+                src={data.beforeImage.url}
+                alt={data.beforeImage.alt ? data.beforeImage.alt : "Before"}
+                priority={priority}
+                fill
+              />
+            }
+            itemOne={
+              <Image
+                src={data.afterImage.url}
+                alt={data.afterImage.alt ? data.afterImage.alt : "Before"}
+                fill
+                priority={priority}
+              />
+            }
+          /> : <div className="image-wrapper"   style={{
+            paddingBottom: `${
+              (data.beforeImage.height / data.beforeImage.width) * 100
+            }%`,
+          
+          }}>
+            <Image src={data.beforeImage.url} alt={data.beforeImage.alt ? data.beforeImage.alt : "Before"} fill />
+          </div>
+      }
 
-      <ReactCompareSlider
-        className="image-wrapper"
-        onlyHandleDraggable={true}
-        style={{
-          paddingBottom: `${
-            (data.beforeImage.height / data.beforeImage.width) * 100
-          }%`,
-          touchAction: "pan-y",
-        }}
-        itemTwo={
-          <Image
-            src={data.beforeImage.url}
-            alt={data.beforeImage.alt ? data.beforeImage.alt : "Before"}
-            priority={priority}
-            fill
-          />
-        }
-        itemOne={
-          <Image
-            src={data.afterImage.url}
-            alt={data.afterImage.alt ? data.afterImage.alt : "Before"}
-            fill
-            priority={priority}
-          />
-        }
-      />
     </Container>
   );
 }
-const Container = styled.section`
+const Container = styled.div`
   .image-wrapper {
-    display: inline-block;
-
+    display: flex;
     width: 100%;
     position: relative;
     img {

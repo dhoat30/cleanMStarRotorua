@@ -15,7 +15,7 @@ const nextConfig = {
     images: {
         remotePatterns: [{
             protocol: 'https',
-            hostname: 'cms.bestnzmovers.co.nz',
+            hostname: 'data.webduel.co.nz',
             port: '',
             pathname: '/**'
         },
@@ -29,10 +29,9 @@ const nextConfig = {
     ],
     },
     env: {
-        url: "https://cms.bestnzmovers.co.nz",
-        siteUrl: "https://bestnzmovers.co.nz",
-        name: "Best NZ Movers Auckland",
-        GOOGLE_REDIRECT_URI: process.env.NODE_ENV === 'production' ? 'https://bestnzmovers.co.nz' : 'http://localhost:3000'
+        url: "https://data.webduel.co.nz",
+        siteUrl: "https://cleanmstart.co.nz",
+        siteName: "Prime Clean Experts",
     },
 
 }

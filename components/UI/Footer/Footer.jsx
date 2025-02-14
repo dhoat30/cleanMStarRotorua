@@ -21,9 +21,9 @@ export default function Footer({
   contactInfo,
   socialData,
 }) {
-  
+ 
+
   return (
-  
     <>
       {showFooterCta && (
         <FooterCta
@@ -32,127 +32,128 @@ export default function Footer({
           cta={footerCtaData.cta_link}
         />
       )}
-      {contactInfo && 
-      <FooterSection>
-        <ContainerStyled maxWidth="xl" className="row">
-          {/* logo wrapper */}
-          <div className="footer-wrapper">
-            <div className="certification-wrapper">
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ marginBottom: "8px" }}
-              >
-                Certifications
-              </Typography>
-              <div className="certification-logos flex flex-wrap gap-8 align-center">
-                {certifications.cards &&
-                  certifications.cards.map((item, index) => {
-                    return (
-                      <Image
-                        key={index}
-                        src={item.certification_image.url}
-                        alt={item.alt ? item.alt : "certification"}
-                        width={item.certification_image.width}
-                        height={item.certification_image.height}
-                      />
-                    );
-                  })}
-              </div>
-              <div className="newsletter-wrapper mt-40">
-                <Typography
-                  variant="subtitle1"
-                  component="div"
-                  sx={{ marginBottom: "8px" }}
-                >
-                  Get tips & tricks every month
-                </Typography>
-                <NewsletterForm
-                  className="newsletter-form"
-                  formName="Newsletter Form"
-                  formType="newsletter-form"
-                  emailRoute={"/api/newsletter-hubspot"}
-                  emailTo="designer@treescene.co.nz"
-                  btnLabel="Subscribe"
-                />
-              </div>
-            </div>
-            <div className="footer-useful-links links-container">
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ marginBottom: "8px" }}
-              >
-                Services
-              </Typography>
-              <ul component="ul" sx={{ margin: 0, padding: 0 }}>
-                {services.map((link, index) => {
-                  return (
-                    <li key={index}>
-                      <Link href={link.url} className="body2">
-                        {link.label}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          
-            <div className="footer-useful-links links-container">
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ marginBottom: "8px" }}
-              >
-                Information
-              </Typography>
-              <ul component="ul" sx={{ margin: 0, padding: 0 }}>
-                {informationLinks.map((link, index) => {
-                  return (
-                    <li key={index}>
-                      <Link href={link.url} className="body2">
-                        {link.label}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <div className="contact-wrapper">
-              <div className="contact-section">
-                <ContactInfo contactInfo={contactInfo} />
-              </div>
+{footerCtaData != undefined && 
 
-              <div className="social-wrapper">
-                <Typography variant="h6" component="div">
-                  Follow Us
-                </Typography>
-                <div className="social-links mt-8">
-                  {socialData.length > 0 &&
-                    socialData.map((social, index) => {
-                      return (
-                        <Link
-                          key={index}
-                          aria-label={social.social_media_name}
-                          href={social.link}
-                          target="_blank"
-                        >
-                          <Image
-                            src={social.social_media_icon.url}
-                            alt={social.social_media_name}
-                            width="32"
-                            height="32"
-                          />
-                        </Link>
-                      );
-                    })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </ContainerStyled>
-      </FooterSection>
-      }
+<FooterSection>
+<ContainerStyled maxWidth="xl" className="row">
+  {/* logo wrapper */}
+  <div className="footer-wrapper">
+    <div className="certification-wrapper">
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ marginBottom: "8px" }}
+      >
+        Certifications
+      </Typography>
+      <div className="certification-logos flex flex-wrap gap-8 align-center">
+        {certifications.cards &&
+          certifications.cards.map((item, index) => {
+            return (
+              <Image
+                key={index}
+                src={item.certification_image.url}
+                alt={item.alt ? item.alt : "certification"}
+                width={item.certification_image.width}
+                height={item.certification_image.height}
+              />
+            );
+          })}
+      </div>
+      <div className="newsletter-wrapper mt-40">
+        <Typography
+          variant="subtitle1"
+          component="div"
+          sx={{ marginBottom: "8px" }}
+        >
+          Get tips & tricks every month
+        </Typography>
+        <NewsletterForm
+          className="newsletter-form"
+          formName="Newsletter Form"
+          formType="newsletter-form"
+          emailRoute={"/api/newsletter-hubspot"}
+          emailTo="designer@treescene.co.nz"
+          btnLabel="Subscribe"
+        />
+      </div>
+    </div>
+    <div className="footer-useful-links links-container">
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ marginBottom: "8px" }}
+      >
+        Services
+      </Typography>
+      <ul component="ul" sx={{ margin: 0, padding: 0 }}>
+        {services.map((link, index) => {
+          return (
+            <li key={index}>
+              <Link href={link.url} className="body2">
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  
+    <div className="footer-useful-links links-container">
+      <Typography
+        variant="h6"
+        component="div"
+        sx={{ marginBottom: "8px" }}
+      >
+        Information
+      </Typography>
+      <ul component="ul" sx={{ margin: 0, padding: 0 }}>
+        {informationLinks.map((link, index) => {
+          return (
+            <li key={index}>
+              <Link href={link.url} className="body2">
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+    <div className="contact-wrapper">
+      <div className="contact-section">
+        <ContactInfo contactInfo={contactInfo} />
+      </div>
+
+      <div className="social-wrapper">
+        <Typography variant="h6" component="div">
+          Follow Us
+        </Typography>
+        <div className="social-links mt-8">
+          {socialData.length > 0 &&
+            socialData.map((social, index) => {
+              return (
+                <Link
+                  key={index}
+                  aria-label={social.social_media_name}
+                  href={social.link}
+                  target="_blank"
+                >
+                  <Image
+                    src={social.social_media_icon.url}
+                    alt={social.social_media_name}
+                    width="32"
+                    height="32"
+                  />
+                </Link>
+              );
+            })}
+        </div>
+      </div>
+    </div>
+  </div>
+</ContainerStyled>
+</FooterSection>
+}
       {/* copyright container */}
       <Copyright />
     </>

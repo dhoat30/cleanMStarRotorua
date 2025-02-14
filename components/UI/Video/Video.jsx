@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from 'react-player'
 import Image from "next/image";
 import styled from "@emotion/styled";
 import PlayIcon from "../Icons/PlayIcon";
@@ -9,7 +9,10 @@ export default function Video({
   placeholderImage,
   className,
   showCompressedImage,
+  videoHosted, 
+  url
 }) {
+  console.log(url)
   const imageURL = showCompressedImage
     ? placeholderImage.sizes.large
     : placeholderImage.url;
@@ -22,6 +25,9 @@ export default function Video({
   const handleImageClick = () => {
     setVideoLoaded(true);
   };
+
+  let videoUrl = videoHosted === "youtube" ? `https://www.youtube.com/watch?v=${videoID}` : url;
+  console.log(videoUrl)
   return (
     <ContainerStyled className={className}>
       <div className="video-wrapper">
@@ -46,7 +52,7 @@ export default function Video({
 
         {videoLoaded && (
           <ReactPlayer
-            url={`https://www.youtube.com/watch?v=${videoID}`}
+            url={videoUrl}
             style={{
               position: "absolute",
               top: 0,
